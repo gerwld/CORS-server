@@ -28,7 +28,7 @@ var checkRateLimit = require('./lib/rate-limit')(process.env.CORSANYWHERE_RATELI
 var cors_proxy = require('./lib/cors-anywhere');
 cors_proxy.createServer({
   originBlacklist: originBlacklist,
-  originWhitelist: originWhitelist,
+  originWhitelist: ['http://localhost:3000', 'http://localhost:3001', 'https://localhost:3000', 'https://localhost:3001', 'https://social-network-project-mu.vercel.app'],
   // requireHeader: ['origin', 'x-requested-with'],
   requireHeader: [],
   checkRateLimit: checkRateLimit,
