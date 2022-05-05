@@ -16,10 +16,10 @@ function parseEnvList(env) {
   return env.split(',');
 }
 
-originWhitelist.push('http://localhost:3000');
-originWhitelist.push('http://localhost:3001');
-originWhitelist.push('https://localhost:3000');
-originWhitelist.push('https://localhost:3001');
+// originWhitelist.push('http://localhost:3000');
+// originWhitelist.push('http://localhost:3001');
+// originWhitelist.push('https://localhost:3000');
+// originWhitelist.push('https://localhost:3001');
 
 // Set up rate-limiting to avoid abuse of the public CORS Anywhere server.
 var checkRateLimit = require('./lib/rate-limit')(process.env.CORSANYWHERE_RATELIMIT);
@@ -27,7 +27,7 @@ var checkRateLimit = require('./lib/rate-limit')(process.env.CORSANYWHERE_RATELI
 var cors_proxy = require('./lib/cors-anywhere');
 cors_proxy.createServer({
   originBlacklist: originBlacklist,
-  originWhitelist: ['http://localhost:3000', 'http://localhost:3001', 'https://localhost:3000', 'https://localhost:3001'],
+  originWhitelist: [],
   // requireHeader: ['origin', 'x-requested-with'],
   requireHeader: [],
   checkRateLimit: checkRateLimit,
