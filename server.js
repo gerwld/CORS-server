@@ -15,7 +15,6 @@ function parseEnvList(env) {
   }
   return env.split(',');
 }
-
 // originWhitelist.push('http://localhost:3000');
 // originWhitelist.push('http://localhost:3001');
 // originWhitelist.push('https://localhost:3000');
